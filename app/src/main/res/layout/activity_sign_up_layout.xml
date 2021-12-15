@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EmailInputSignUp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="346dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="300dp"
+        app:boxStrokeColor="#FF5722"
+        app:hintTextColor="#FF5722"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionAlreadyAaccountTextView"
+        app:layout_constraintVertical_bias="0.988"
+        app:startIconDrawable="@drawable/ic_baseline_email_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emailHitForLoginLayout"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/seperateLineSignUpLeft"
+        android:layout_width="150dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/EmailInputSignUp"
+        app:layout_constraintEnd_toEndOf="@+id/EmailInputSignUp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/orTextViewSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/questionAlreadyAaccountTextView"
+        app:layout_constraintVertical_bias="0.595" />
+
+    <View
+        android:id="@+id/seperateLinerSignUpRight"
+        android:layout_width="150dp"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/EmailInputSignUp"
+        app:layout_constraintEnd_toStartOf="@+id/orTextViewSignUp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/EmailInputSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/questionAlreadyAaccountTextView"
+        app:layout_constraintVertical_bias="0.597" />
+
+    <TextView
+        android:id="@+id/joinText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signUpTextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/questionAlreadyAaccountTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoSignUp"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/CreatePasswordSignUp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="346dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="232dp"
+        app:boxStrokeColor="#FF5722"
+        app:endIconMode="password_toggle"
+        app:hintTextColor="#FF5722"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+            android:hint="@string/createPassword"
+            android:inputType="textPassword"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/finishSignUp"
+        android:layout_width="261dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="96dp"
+        android:backgroundTint="#FF5722"
+        android:onClick="singUp"
+        android:text="@string/letsgo"
+        app:cornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/orTextViewSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/separator"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CreatePasswordSignUp"
+        app:layout_constraintEnd_toEndOf="@+id/EmailInputSignUp"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/EmailInputSignUp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648" />
+
+    <ImageView
+        android:id="@+id/logoSignUp"
+        android:layout_width="80dp"
+        android:layout_height="72dp"
+        android:contentDescription="@string/setContentValueLoginActivityForLogo"
+        app:layout_constraintBottom_toTopOf="@+id/orTextViewSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082"
+        app:srcCompat="@drawable/_8481652cef1014c0b5e4981" />
+
+    <TextView
+        android:id="@+id/questionAlreadyAaccountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoSignUp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/googleAPISignUp"
+        android:layout_width="61dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="140dp"
+        android:contentDescription="@string/setContentValueLoginActivityForGoogleApi"
+        app:layout_constraintBottom_toTopOf="@+id/seperateLineSignUpLeft"
+        app:layout_constraintEnd_toEndOf="@+id/seperateLineSignUpLeft"
+        app:layout_constraintTop_toBottomOf="@+id/questionAlreadyAaccountTextView"
+        app:layout_constraintVertical_bias="0.478"
+        app:srcCompat="@drawable/icons8_google_240" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="342dp"
+        android:layout_height="40dp"
+        android:text="@string/rule"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="@+id/CreatePasswordSignUp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/CreatePasswordSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/CreatePasswordSignUp" />
+
+    <TextView
+        android:id="@+id/clickruls"
+        android:layout_width="44dp"
+        android:layout_height="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/CreatePasswordSignUp"
+        app:layout_constraintVertical_bias="0.25" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- - Mobile Version XML
+            - By Mehran Alam Beigi for Every Developr
+            - this Soruce for selling
+        -->
+
+    <!--
+
+     این برنامه توسط مهران علم بیگی توسعه داده میشود هرگونه
+     کپی اساسا حرام است ... این سورس جنبه های دیگری برای استفاده نیز دارد که به شرح زیر است :
+
+     1 . استفاده تجاری
+     2. ارائه به عنوان نمونه کار
+
+    MobilePhoneDeveloper : +989211756034
+    Email for job inquiries : mehranalambeigi@gmail.com
+
+    -->

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForgetPassweordAcrivity">
+
+    <ImageView
+        android:id="@+id/logoForgetPassword"
+        android:layout_width="104dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/titleForForgetPassword"
+        app:layout_constraintEnd_toEndOf="@+id/titleForForgetPassword"
+        app:layout_constraintStart_toStartOf="@+id/titleForForgetPassword"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/_8481652cef1014c0b5e4981"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/titleForForgetPassword"
+        android:layout_width="377dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="124dp"
+        android:fontFamily="@font/abeezee"
+        android:text="@string/forgetPasswordTitle"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/inputEmailForSetForgetPassword"
+        app:layout_constraintStart_toStartOf="@+id/inputEmailForSetForgetPassword"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEmailForSetForgetPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="76dp"
+        app:boxStrokeColor="#FF5722"
+        app:hintTextColor="#FF5722"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoForgetPassword"
+        app:layout_constraintVertical_bias="0.012">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:hint="@string/enter_email"
+            tools:ignore="TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="203dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#FF5722"
+        android:text="@string/next_step"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="18dp"
+        app:iconTint="#FF5722"
+        app:layout_constraintEnd_toEndOf="@+id/inputEmailForSetForgetPassword"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/inputEmailForSetForgetPassword"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmailForSetForgetPassword"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="286dp"
+        android:layout_height="304dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:srcCompat="@drawable/ronio___v4r2_forgot_password_01___med"
+        android:contentDescription="@string/todo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- -
+            - By Mehran Alam Beigi for Every Developr
+            - this Soruce for selling
+        -->
+
+    <!--
+
+     این برنامه توسط مهران علم بیگی توسعه داده میشود هرگونه
+     کپی اساسا حرام است ... این سورس جنبه های دیگری برای استفاده نیز دارد که به شرح زیر است :
+
+     1 . استفاده تجاری
+     2. ارائه به عنوان نمونه کار
+
+    MobilePhoneDeveloper : +989211756034
+    Email for job inquiries : mehranalambeigi@gmail.com
+
+    -->

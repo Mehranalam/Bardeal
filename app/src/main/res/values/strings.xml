@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Bardeal</string>
+    <string name="buttonWelcomeText">Next</string>
+    <string name="questionAaccountTextView">Don\'t have an account ? <font color='#e74a06'>Sign Up</font></string>
+    <string name="login">Already have an account? <font color='#e74a06'>Login</font></string>
+    <string name="loginTextView">Login in to Bardeal</string>
+    <string name="emailHitForLoginLayout">Email</string>
+    <string name="separator">Or</string>
+    <string name="passwordHint">Password</string>
+    <string name="checkRemember">Remember?"</string>
+    <string name="forgetPasswordText">Forget password ?</string>
+    <string name="letsgo">Next</string> <!-- preceded with \\ for check ' in XML-->
+    <string name="setContentValueLoginActivityForLogo">logoApp</string>
+    <string name="setContentValueLoginActivityForAppleApi">appleLogo</string>
+    <string name="setContentValueLoginActivityForGoogleApi">googleLogo</string>
+    <string name="signUpTextView">Join in to Bardeal 🎉</string>
+    <string name="createPassword">CreatePassword</string>
+    <string name="rule">by click you accept all the <font color='#e74a06'>rules</font> of the parent company of this app </string>
+    <string name="itemViewContentDescription">a photo for intro shop feature</string>
+    <string name="itemViewIsBlank">blank</string>
+    <string name="forgetPasswordTitle">Opps Forget password🤦‍♀</string>
+    <string name="next_step">Next Step</string>
+    <string name="todo">TODO</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="snackerbanner">Looks like you\'ve already <font color='#e74a06'>registered</font> or <font color='#e74a06'>logged in 🧐</font></string>
+    <string name="snackerbannerSucssfule">Welcome to <font color='#e74a06'>bardeal</font> 🥳</string>
+    <string name="Toast">Looks like you haven\'t <font color='#e74a06'> logged </font>in or <font color='#e74a06'> registered</font> yet please Sign up 🥳</string>
+    <string name="connectionisfield">Try Again</string>
+    <string name="tryl">Connection is failed <font color='#e74a06'>Try again ...</font></string>
+
+</resources>

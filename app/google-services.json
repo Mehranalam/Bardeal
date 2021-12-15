@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "693087023316",
+    "project_id": "berdeal-86d9c",
+    "storage_bucket": "berdeal-86d9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693087023316:android:5acb36bf38e910f2bc4b41",
+        "android_client_info": {
+          "package_name": "com.example.bardeal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693087023316-nsjlmt9sgnnlhh4gdsan7g0scfe7bi0p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bardeal",
+            "certificate_hash": "16462096a0d4e2fb3a1f1631a1053eac22a43213"
+          }
+        },
+        {
+          "client_id": "693087023316-729b109jb6b4hhsm53gh72sd34blp8kh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTTsJH8sMVPv3XJu_Tdxux8k-wlTKPMtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693087023316-729b109jb6b4hhsm53gh72sd34blp8kh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

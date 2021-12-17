@@ -75,7 +75,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionAaccountTextView"
-        app:layout_constraintVertical_bias="0.319">
+        app:layout_constraintVertical_bias="0.319"
+        app:startIconDrawable="@drawable/ic_baseline_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -96,7 +97,8 @@
         app:layout_constraintEnd_toEndOf="@+id/EmailInput"
         app:layout_constraintStart_toStartOf="@+id/EmailInput"
         app:layout_constraintTop_toBottomOf="@+id/EmailInput"
-        app:layout_constraintVertical_bias="0.077">
+        app:layout_constraintVertical_bias="0.077"
+        app:startIconDrawable="@drawable/ic_baseline_fingerprint_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

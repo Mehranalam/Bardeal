@@ -14,6 +14,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,16 +39,6 @@ public class SignUpActivity extends AppCompatActivity {
 
         email = findViewById(R.id.EmailInputSignUp);
         password = findViewById(R.id.CreatePasswordSignUp);
-        clickRules = findViewById(R.id.clickruls);
-        clickRules.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW , Uri.parse(""));
-                startActivity(browserIntent);
-
-                // TODO : create a post for rules in Blogger google ....
-            }
-        });
 
         myAuth = FirebaseAuth.getInstance();
 
@@ -57,7 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         Window window = getWindow();
         window.setStatusBarColor(ContextCompat.getColor(getApplicationContext()
-                ,R.color.purple_200));
+                , R.color.purple_200));
     }
 
     @Override
@@ -65,37 +56,43 @@ public class SignUpActivity extends AppCompatActivity {
         super.onStart();
 
         FirebaseUser currentUser = myAuth.getCurrentUser();
-        if (currentUser != null){
-            Snackbar.make(email ,R.string.snackerbanner ,Snackbar.LENGTH_SHORT)
+        if (currentUser != null) {
+            Snackbar.make(email, R.string.snackerbanner, Snackbar.LENGTH_SHORT)
                     .show();
 
-            Intent intent = new Intent(this , MainActivity.class);
-            startActivity(intent , ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
             finish();
         }
     }
 
-    public void singUp(View view){
+    public void singUp(View view) {
         // TODO: Set this field for build a account by generous user
-        myAuth.createUserWithEmailAndPassword(email.getEditText().getText().toString() ,
-                password.getEditText().getText().toString()).addOnCompleteListener(this,
-                new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    FirebaseUser user = myAuth.getCurrentUser();
-                    Snackbar.make(email ,"Oh ok is create a account letsGo" ,Snackbar.LENGTH_SHORT)
-                            .show();
+        if (email.getEditText().getText().toString().matches("")
+                || password.getEditText().toString().matches("")) {
+            Toast.makeText(getApplicationContext() ,"Please Complement field" ,Toast.LENGTH_SHORT)
+                    .show();
+        } else {
+            myAuth.createUserWithEmailAndPassword(email.getEditText().getText().toString(),
+                    password.getEditText().getText().toString()).addOnCompleteListener(this,
+                    new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = myAuth.getCurrentUser();
+                                Snackbar.make(email, "Oh ok is create a account letsGo", Snackbar.LENGTH_SHORT)
+                                        .show();
 
-                    Intent intent = new Intent(isConvert , MainActivity.class);
-                    startActivity(intent ,ActivityOptions.makeSceneTransitionAnimation(isConvert).toBundle());
-                    finish();
-                } else {
-                    Snackbar.make(email ,"oh have a wrong" ,Snackbar.LENGTH_SHORT)
-                            .show();
-                }
-            }
-        });
+                                Intent intent = new Intent(isConvert, MainActivity.class);
+                                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(isConvert).toBundle());
+                                finish();
+                            } else {
+                                Snackbar.make(email, "oh have a wrong", Snackbar.LENGTH_SHORT)
+                                        .show();
+                            }
+                        }
+                    });
+        }
     }
 
 }

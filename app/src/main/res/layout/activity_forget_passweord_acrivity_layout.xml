@@ -38,7 +38,7 @@
         android:id="@+id/inputEmailForSetForgetPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="365dp"
-        android:layout_height="55dp"
+        android:layout_height="65dp"
         android:layout_marginTop="76dp"
         app:boxStrokeColor="#FF5722"
         app:hintTextColor="#FF5722"
@@ -50,7 +50,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="47dp"
+            android:layout_height="52dp"
             android:hint="@string/enter_email"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>

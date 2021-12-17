@@ -25,8 +25,8 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
-        android:layout_width="550dp"
-        android:layout_height="378dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,9 +58,9 @@
         android:layout_width="331dp"
         android:layout_height="65dp"
         android:backgroundTint="#e74a06"
+        android:onClick="clickInNextButton"
         android:text="@string/buttonWelcomeText"
         android:textSize="16sp"
-        android:onClick="clickInNextButton"
         app:cornerRadius="36dp"
         app:iconTint="#F4E7E7"
         app:layout_constraintBottom_toBottomOf="parent"

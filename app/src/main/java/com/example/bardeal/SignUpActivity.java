@@ -60,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
             Snackbar.make(email, R.string.snackerbanner, Snackbar.LENGTH_SHORT)
                     .show();
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, Categories.class);
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
             finish();
         }
@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 Snackbar.make(email, "Oh ok is create a account letsGo", Snackbar.LENGTH_SHORT)
                                         .show();
 
-                                Intent intent = new Intent(isConvert, MainActivity.class);
+                                Intent intent = new Intent(isConvert, Categories.class);
                                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(isConvert).toBundle());
                                 finish();
                             } else {
@@ -93,6 +93,12 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     });
         }
+    }
+
+
+    public void goToLogin(View view){
+        Intent intent = new Intent(this ,LoginActivity.class);
+        startActivity(intent ,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
 }

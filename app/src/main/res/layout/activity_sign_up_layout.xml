@@ -138,6 +138,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
+        android:onClick="goToLogin"
         android:text="@string/login"
         android:textAlignment="center"
         android:textSize="16sp"

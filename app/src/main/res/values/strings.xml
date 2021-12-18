@@ -27,5 +27,6 @@
     <string name="Toast">Looks like you haven\'t <font color='#e74a06'> logged </font>in or <font color='#e74a06'> registered</font> yet please Sign up 🥳</string>
     <string name="connectionisfield">Try Again</string>
     <string name="tryl">Connection is failed <font color='#e74a06'>Try again ...</font></string>
-
+    <string name="chip">Choose your favorite\nfashion categories</string>
+    <string name="choose">You can choose more than one</string>
 </resources>

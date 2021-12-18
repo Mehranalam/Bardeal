@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/progress.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/selected_color_chips.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_categories.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_forget_passweord_acrivity_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_launcher.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login_activiti_layout.xml" value="0.5" />
@@ -17,12 +19,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.5" />
-      </ProjectState>
-    </option>
   </component>
 </project>

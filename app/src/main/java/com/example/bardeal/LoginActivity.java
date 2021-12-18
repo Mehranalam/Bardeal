@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
             Snackbar.make(email, R.string.snackerbanner, Snackbar.LENGTH_SHORT)
                     .show();
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, Categories.class);
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
             finish();
         }
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                                                 Snackbar.LENGTH_SHORT)
                                                 .show();
                                         Intent intentForEndOfLogin = new Intent(forEnableActivity,
-                                                MainActivity.class);
+                                                Categories.class);
                                         startActivity(intentForEndOfLogin,
                                                 ActivityOptions.makeSceneTransitionAnimation(forEnableActivity).toBundle());
 

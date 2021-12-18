@@ -1,4 +1,4 @@
-# Bardeal
+# Bardeal(Firebase Version)
 
 An online shop under Android is a large app with many components of this program uses 
 the **firebase** service and the UI design idea of this program is inspired by 

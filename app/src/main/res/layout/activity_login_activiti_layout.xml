@@ -179,14 +179,14 @@
         app:srcCompat="@drawable/icons8_google_240" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/twitter"
         android:layout_width="61dp"
         android:layout_height="54dp"
         android:layout_marginStart="100dp"
         app:layout_constraintBottom_toTopOf="@+id/seaperateLineLeft"
         app:layout_constraintStart_toStartOf="@+id/seaperateLineLeft"
         app:layout_constraintTop_toBottomOf="@+id/questionAaccountTextView"
-        app:srcCompat="@drawable/github_mark_120px_plus" />
+        app:srcCompat="@drawable/_021_twitter_logo___blue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

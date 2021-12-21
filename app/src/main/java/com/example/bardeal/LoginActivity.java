@@ -7,11 +7,15 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabColorSchemeParams;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.transition.Explode;
 import android.transition.Slide;
@@ -41,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout email;
     private TextInputLayout password;
     private ImageView google;
+    private ImageView twitter;
     private FirebaseAuth myAuth;
     private LoginActivity forEnableActivity = this;
     private TextView forgetText;
@@ -59,6 +64,28 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordInput);
         forgetText = findViewById(R.id.forgetPasswordTextView);
         google = findViewById(R.id.googleAPI);
+        twitter = findViewById(R.id.twitter);
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(email ,"in the next version this feature is enable" ,Snackbar.LENGTH_LONG)
+                        .setAction("Learn More", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int color = Color.parseColor("#e74a06");
+                                CustomTabColorSchemeParams schemeParams = new CustomTabColorSchemeParams
+                                        .Builder().setToolbarColor(color)
+                                        .build();
+                                
+                                String url = "https://firebase.google.com/docs/auth/android/twitter-login?authuser=0";
+                                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                                CustomTabsIntent customTabsIntent = builder.build();
+                                builder.setDefaultColorSchemeParams(schemeParams);
+                                customTabsIntent.launchUrl(LoginActivity.this ,Uri.parse(url));
+                            }
+                        }).show();
+            }
+        });
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -82,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                                 GoogleSignInAccount account = task.getResult(ApiException.class);
                                 firebaseAuthWithGoogle(account.getIdToken());
                             } catch (ApiException e){
-                                System.out.println("Please check VPN");
+                                System.out.println("please check vpn connection");
                             }
                         }
                     }
@@ -134,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                                     .toBundle());
                             finish();
                         } else {
-                            Toast.makeText(getApplicationContext() , "Please check VPN"
+                            Toast.makeText(getApplicationContext() , "please check vpn connection"
                                     ,Toast.LENGTH_SHORT)
                                     .show();
                         }
@@ -183,7 +210,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                         finish();
                                     } else {
-                                        Snackbar.make(email, R.string.Toast, Snackbar.LENGTH_SHORT)
+                                        Snackbar.make(email,"please check vpn connection", Snackbar.LENGTH_SHORT)
                                                 .show();
                                     }
                                 }

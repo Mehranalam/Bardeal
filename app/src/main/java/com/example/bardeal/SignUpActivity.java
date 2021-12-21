@@ -7,11 +7,14 @@ import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabColorSchemeParams;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.transition.Explode;
@@ -38,6 +41,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.OAuthProvider;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -45,7 +49,9 @@ public class SignUpActivity extends AppCompatActivity {
     private TextInputLayout password;
     private ImageView google;
     private FirebaseAuth myAuth;
+    private ImageView twtter;
     private SignUpActivity isConvert = this;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +61,30 @@ public class SignUpActivity extends AppCompatActivity {
         email = findViewById(R.id.EmailInputSignUp);
         password = findViewById(R.id.CreatePasswordSignUp);
         google = findViewById(R.id.googleAPISignUp);
+        twtter = findViewById(R.id.twitterSignUp);
+        twtter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(email ,"in the next version this feature is enable" ,Snackbar.LENGTH_LONG)
+                        .setAction("Learn More", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int color = Color.parseColor("#e74a06");
+                                CustomTabColorSchemeParams schemeParams = new CustomTabColorSchemeParams
+                                        .Builder().setToolbarColor(color)
+                                        .build();
 
+                                String url = "https://firebase.google.com/docs/auth/android/twitter-login?authuser=0";
+                                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                                CustomTabsIntent customTabsIntent = builder.build();
+                                builder.setDefaultColorSchemeParams(schemeParams);
+                                customTabsIntent.launchUrl(SignUpActivity.this ,Uri.parse(url));
+                            }
+                        }).show();
+            }
+        });
+
+        OAuthProvider.Builder provider = OAuthProvider.newBuilder("github.com");
 
         myAuth = FirebaseAuth.getInstance();
 
@@ -91,7 +120,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 GoogleSignInAccount account = task.getResult(ApiException.class);
                                 firebaseAuthWithGoogleBardeal(account.getIdToken());
                             } catch (ApiException e){
-                                System.out.println("HAve Wrong");
+                                System.out.println("please check vpn connection");
                             }
                         }
                     }
@@ -143,7 +172,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(isConvert).toBundle());
                                 finish();
                             } else {
-                                Snackbar.make(email, "Please check VPN", Snackbar.LENGTH_SHORT)
+                                Snackbar.make(email, "please check vpn connection", Snackbar.LENGTH_SHORT)
                                         .show();
                             }
                         }

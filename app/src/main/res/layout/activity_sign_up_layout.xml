@@ -173,14 +173,14 @@
         app:layout_constraintTop_toBottomOf="@+id/CreatePasswordSignUp" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/twitterSignUp"
         android:layout_width="61dp"
         android:layout_height="54dp"
         android:layout_marginStart="104dp"
         app:layout_constraintBottom_toTopOf="@+id/seperateLinerSignUpRight"
         app:layout_constraintStart_toStartOf="@+id/seperateLinerSignUpRight"
         app:layout_constraintTop_toBottomOf="@+id/questionAlreadyAaccountTextView"
-        app:srcCompat="@drawable/github_mark_120px_plus" />
+        app:srcCompat="@drawable/_021_twitter_logo___blue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

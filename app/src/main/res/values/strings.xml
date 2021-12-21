@@ -29,4 +29,7 @@
     <string name="tryl">Connection is failed <font color='#e74a06'>Try again ...</font></string>
     <string name="chip">Choose your favorite\nfashion categories</string>
     <string name="choose">You can choose more than one</string>
+    <string name="clientID">693087023316-729b109jb6b4hhsm53gh72sd34blp8kh.apps.googleusercontent.com</string>
+    <string name="lang">please change display language to EN <font color='#e74a06'>Try again ...</font></string>
+
 </resources>

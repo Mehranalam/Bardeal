@@ -170,13 +170,23 @@
         android:id="@+id/googleAPI"
         android:layout_width="61dp"
         android:layout_height="54dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginEnd="100dp"
         android:contentDescription="@string/setContentValueLoginActivityForGoogleApi"
         app:layout_constraintBottom_toTopOf="@+id/seaperateLineRight"
         app:layout_constraintEnd_toEndOf="@+id/seaperateLineRight"
         app:layout_constraintTop_toBottomOf="@+id/questionAaccountTextView"
-        app:layout_constraintVertical_bias="0.511"
+        app:layout_constraintVertical_bias="0.428"
         app:srcCompat="@drawable/icons8_google_240" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="61dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/seaperateLineLeft"
+        app:layout_constraintStart_toStartOf="@+id/seaperateLineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/questionAaccountTextView"
+        app:srcCompat="@drawable/github_mark_120px_plus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

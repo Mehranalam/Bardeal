@@ -12,7 +12,7 @@
         android:layout_height="52dp"
         android:layout_marginBottom="60dp"
         android:backgroundTint="#e74a06"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/assistant_semibold"
         android:text="Countinue"
         android:textAllCaps="false"
         android:textSize="16sp"
@@ -58,7 +58,7 @@
         android:layout_width="132dp"
         android:layout_height="48dp"
         android:layout_marginBottom="32dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/assistant_semibold"
         android:text="Skip for now"
         android:textAllCaps="false"
         android:textColor="#8F8484"
@@ -83,70 +83,80 @@
             android:layout_height="70dp"
             android:text="🧥 Jacket"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="👜 Handbag"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="👓 Spectacle"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="👘 Kimono"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="🧤 Gloves"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="🎩 Hats"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="👗 Dress"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="👞 Flat Shoes"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="👖 Jeans"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
         <com.google.android.material.chip.Chip
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:text="👔 Necktie"
             android:textAlignment="center"
-            app:chipBackgroundColor="@color/chip_selector"/>
+            app:chipBackgroundColor="@color/chip_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
 
 
     </com.google.android.material.chip.ChipGroup>

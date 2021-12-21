@@ -153,12 +153,12 @@
         android:id="@+id/googleAPISignUp"
         android:layout_width="61dp"
         android:layout_height="54dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginEnd="104dp"
         android:contentDescription="@string/setContentValueLoginActivityForGoogleApi"
         app:layout_constraintBottom_toTopOf="@+id/seperateLineSignUpLeft"
         app:layout_constraintEnd_toEndOf="@+id/seperateLineSignUpLeft"
         app:layout_constraintTop_toBottomOf="@+id/questionAlreadyAaccountTextView"
-        app:layout_constraintVertical_bias="0.478"
+        app:layout_constraintVertical_bias="0.484"
         app:srcCompat="@drawable/icons8_google_240" />
 
     <TextView
@@ -171,6 +171,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/CreatePasswordSignUp"
         app:layout_constraintTop_toBottomOf="@+id/CreatePasswordSignUp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="61dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="104dp"
+        app:layout_constraintBottom_toTopOf="@+id/seperateLinerSignUpRight"
+        app:layout_constraintStart_toStartOf="@+id/seperateLinerSignUpRight"
+        app:layout_constraintTop_toBottomOf="@+id/questionAlreadyAaccountTextView"
+        app:srcCompat="@drawable/github_mark_120px_plus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

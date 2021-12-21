@@ -24,6 +24,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Locale;
+
 import pl.droidsonroids.gif.GifAnimationMetaData;
 
 
@@ -35,6 +37,7 @@ public class Launcher extends AppCompatActivity {
     private FirebaseAuth myAuth;
     private TextView discription;
     private ImageView tryagin;
+    private TextView lang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,25 +48,59 @@ public class Launcher extends AppCompatActivity {
         getWindow().setExitTransition(new Explode());
         tryagin = findViewById(R.id.imageView3);
         discription = findViewById(R.id.textView2);
+        lang = findViewById(R.id.language);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (isOnline()){
+                if (isOnline() && isEnLang()) {
                     checking();
                 } else {
-
-                    discription.setText(R.string.tryl);
-                    discription.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            checking();
-                        }
-                    });
+                    if (!isOnline() && !isEnLang()) {
+                        lang.setText(R.string.lang);
+                        lang.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                checking();
+                            }
+                        });
+                        discription.setText(R.string.tryl);
+                        discription.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                checking();
+                            }
+                        });
+                    } else if (!isEnLang()) {
+                        lang.setText(R.string.lang);
+                        lang.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                checking();
+                            }
+                        });
+                    } else if (!isOnline()) {
+                        discription.setText(R.string.tryl);
+                        discription.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                checking();
+                            }
+                        });
+                    }
                 }
             }
-        } ,DURATION_SPLASH);
+        }, DURATION_SPLASH);
 
+    }
+
+    public boolean isEnLang() {
+        String lang = Locale.getDefault().getDisplayLanguage();
+        if (lang.equals("English")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
@@ -75,17 +112,17 @@ public class Launcher extends AppCompatActivity {
         return networkInfo != null && networkInfo.isConnectedOrConnecting();
     }
 
-    public void checking(){
+    public void checking() {
         myAuth = FirebaseAuth.getInstance();
         FirebaseUser user = myAuth.getCurrentUser();
 
-        if (user != null && isOnline()) {
+        if (user != null && isOnline() && isEnLang()) {
             Intent intent = new Intent(isConvert, MainActivity.class);
             startActivity(intent,
                     ActivityOptions.makeSceneTransitionAnimation(isConvert).toBundle());
 
             finish();
-        } else if (isOnline()){
+        } else if (isOnline() && isEnLang()) {
             Intent intent = new Intent(isConvert, WelcomingActivity.class);
             startActivity(intent,
                     ActivityOptions.makeSceneTransitionAnimation(isConvert).toBundle());

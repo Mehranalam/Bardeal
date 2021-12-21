@@ -2,6 +2,10 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abeezee</item>
+        <item>@font/archivo_black</item>
+        <item>@font/assistant</item>
+        <item>@font/assistant_semibold</item>
+        <item>@font/average_sans</item>
         <item>@font/baloo</item>
     </array>
 </resources>

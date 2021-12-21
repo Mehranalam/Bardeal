@@ -1,9 +1,15 @@
 package com.example.bardeal;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,29 +17,31 @@ import android.transition.Explode;
 import android.transition.Slide;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
     private TextInputLayout email;
     private TextInputLayout password;
-    private ImageView appleApi;
     private ImageView google;
-    private Button finishOfLogin;
     private FirebaseAuth myAuth;
-    private View ConstraintLayout;
     private LoginActivity forEnableActivity = this;
     private TextView forgetText;
 
@@ -50,6 +58,46 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.EmailInput);
         password = findViewById(R.id.passwordInput);
         forgetText = findViewById(R.id.forgetPasswordTextView);
+        google = findViewById(R.id.googleAPI);
+
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.clientID))
+                .requestEmail()
+                .build();
+
+        GoogleSignInClient mg = GoogleSignIn.getClient(this, googleSignInOptions);
+
+        ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK){
+                            Intent data = result.getData();
+                            Task<GoogleSignInAccount> task = GoogleSignIn
+                                    .getSignedInAccountFromIntent(data);
+
+                            try {
+                                GoogleSignInAccount account = task.getResult(ApiException.class);
+                                firebaseAuthWithGoogle(account.getIdToken());
+                            } catch (ApiException e){
+                                System.out.println("Please check VPN");
+                            }
+                        }
+                    }
+                }
+        );
+
+        google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = mg.getSignInIntent();
+                activityResultLauncher.launch(intent);
+            }
+        });
+
+
 
         forgetText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +118,30 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void firebaseAuthWithGoogle(String token){
+        AuthCredential credential = GoogleAuthProvider.getCredential(token ,null);
+        myAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            FirebaseUser user = myAuth.getCurrentUser();
+                            Intent intent = new Intent(LoginActivity.this
+                                    ,Categories.class);
+
+                            startActivity(intent ,ActivityOptions.
+                                    makeSceneTransitionAnimation(LoginActivity.this)
+                                    .toBundle());
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext() , "Please check VPN"
+                                    ,Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    }
+                });
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -83,6 +155,7 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
     }
+
 
     public void signIn(View view) {
         if (email.getEditText().getText().toString().matches("") ||

@@ -31,7 +31,9 @@ android {
 
 dependencies {
 
-    implementation "androidx.browser:browser:1.3.0"
+    implementation "com.sergivonavi:materialbanner:1.2.0"
+    implementation 'com.pnikosis:materialish-progress:1.7'
+    implementation "androidx.browser:browser:1.4.0"
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'

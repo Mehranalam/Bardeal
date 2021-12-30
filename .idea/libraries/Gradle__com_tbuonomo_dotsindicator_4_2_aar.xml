@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8ec9d8d17f33118dbe945710509c2fc7/transformed/jetified-dotsindicator-4.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8ec9d8d17f33118dbe945710509c2fc7/transformed/jetified-dotsindicator-4.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8ec9d8d17f33118dbe945710509c2fc7/transformed/jetified-dotsindicator-4.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7c727aeacee9917787e823d51a3b1cc4/transformed/jetified-dotsindicator-4.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7c727aeacee9917787e823d51a3b1cc4/transformed/jetified-dotsindicator-4.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7c727aeacee9917787e823d51a3b1cc4/transformed/jetified-dotsindicator-4.2/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tbuonomo/dotsindicator/4.2/a52ad04c8d5a78ba86bd327191322c215b10272f/dotsindicator-4.2-javadoc.jar!/" />

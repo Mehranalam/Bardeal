@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.sergivonavi:materialbanner:1.2.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ddb5f4d8ed67840870c2d54ffa4b8bed/transformed/jetified-materialbanner-1.2.0/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ddb5f4d8ed67840870c2d54ffa4b8bed/transformed/jetified-materialbanner-1.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ddb5f4d8ed67840870c2d54ffa4b8bed/transformed/jetified-materialbanner-1.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ddb5f4d8ed67840870c2d54ffa4b8bed/transformed/jetified-materialbanner-1.2.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sergivonavi/materialbanner/1.2.0/496c425174cad21dd206b4adc4e4d233305f51ad/materialbanner-1.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sergivonavi/materialbanner/1.2.0/69f441b660016b1df9d2ddcf4d1c7fd2670d5c9c/materialbanner-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

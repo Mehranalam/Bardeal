@@ -65,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
         twtter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(email ,"in the next version this feature is enable" ,Snackbar.LENGTH_LONG)
+                Snackbar.make(email, "in the next version this feature is enable", Snackbar.LENGTH_LONG)
                         .setAction("Learn More", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -78,7 +78,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                                 CustomTabsIntent customTabsIntent = builder.build();
                                 builder.setDefaultColorSchemeParams(schemeParams);
-                                customTabsIntent.launchUrl(SignUpActivity.this ,Uri.parse(url));
+                                customTabsIntent.launchUrl(SignUpActivity.this, Uri.parse(url));
                             }
                         }).show();
             }
@@ -103,7 +103,7 @@ public class SignUpActivity extends AppCompatActivity {
                 .build();
 
         GoogleSignInClient client = GoogleSignIn
-                .getClient(getApplicationContext() ,signInOptions);
+                .getClient(getApplicationContext(), signInOptions);
 
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
@@ -111,7 +111,7 @@ public class SignUpActivity extends AppCompatActivity {
                 new ActivityResultCallback<ActivityResult>() {
                     @Override
                     public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode() == Activity.RESULT_OK){
+                        if (result.getResultCode() == Activity.RESULT_OK) {
                             Intent data = result.getData();
                             Task<GoogleSignInAccount> task = GoogleSignIn
                                     .getSignedInAccountFromIntent(data);
@@ -119,7 +119,7 @@ public class SignUpActivity extends AppCompatActivity {
                             try {
                                 GoogleSignInAccount account = task.getResult(ApiException.class);
                                 firebaseAuthWithGoogleBardeal(account.getIdToken());
-                            } catch (ApiException e){
+                            } catch (ApiException e) {
                                 System.out.println("please check vpn connection");
                             }
                         }
@@ -155,7 +155,7 @@ public class SignUpActivity extends AppCompatActivity {
         // TODO: Set this field for build a account by generous user
         if (email.getEditText().getText().toString().matches("")
                 || password.getEditText().toString().matches("")) {
-            Toast.makeText(getApplicationContext() ,"Please Complement field" ,Toast.LENGTH_SHORT)
+            Toast.makeText(getApplicationContext(), "Please Complement field", Toast.LENGTH_SHORT)
                     .show();
         } else {
             myAuth.createUserWithEmailAndPassword(email.getEditText().getText().toString(),
@@ -181,29 +181,29 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-    public void goToLogin(View view){
-        Intent intent = new Intent(this ,LoginActivity.class);
-        startActivity(intent ,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+    public void goToLogin(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
-    private void firebaseAuthWithGoogleBardeal(String token){
-        AuthCredential authCredential = GoogleAuthProvider.getCredential(token ,null);
+    private void firebaseAuthWithGoogleBardeal(String token) {
+        AuthCredential authCredential = GoogleAuthProvider.getCredential(token, null);
         myAuth.signInWithCredential(authCredential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             FirebaseUser user = myAuth.getCurrentUser();
                             Intent intent = new Intent(SignUpActivity.this
-                                    ,Categories.class);
+                                    , Categories.class);
 
-                            startActivity(intent ,ActivityOptions.
+                            startActivity(intent, ActivityOptions.
                                     makeSceneTransitionAnimation(SignUpActivity.this)
                                     .toBundle());
                             finish();
                         } else {
-                            Toast.makeText(getApplicationContext() , "Please check VPN"
-                                    ,Toast.LENGTH_SHORT)
+                            Toast.makeText(getApplicationContext(), "Please check VPN"
+                                    , Toast.LENGTH_SHORT)
                                     .show();
                         }
                     }

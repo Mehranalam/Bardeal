@@ -45,12 +45,16 @@ public class BrodcastedInternetReciver extends BroadcastReceiver {
                             banner.dismiss();
                         }
                     })
+                    .setRightButton("Try Again", new BannerInterface.OnClickListener() {
+                        @Override
+                        public void onClick(BannerInterface banner) {
+                            checking();
+                        }
+                    })
                     .create();
             banner.setButtonsTextColor(R.color.white);
             banner.setBackgroundColor(this.activity.getResources().getColor(R.color.purple_200));
             banner.show();
-        } else {
-            checking();
         }
     }
 

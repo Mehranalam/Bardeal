@@ -31,5 +31,11 @@
     <string name="choose">You can choose more than one</string>
     <string name="clientID">693087023316-729b109jb6b4hhsm53gh72sd34blp8kh.apps.googleusercontent.com</string>
     <string name="lang">please change display language to EN <font color='#e74a06'>Try again ...</font></string>
+    <string name="rudd">سلام :)\nلطفا برای کسب تجربه بهتر و راحت تر قوانین زیر را رعایت کنید :\n- زبان سیستمی دیوایس اندروید خود را حتما به انگلیسی تغییر دهید\n\n
+- کانکشن اینترنت رو در روال انجام کار اپ قطع نکنید چون باعث ری استارت اکتیویتی میشود\n
+- حتما از شما به عنوان یک تستر اپ در پروژه یادخواهد شد پس تا میتونید زیر و روی اپ رو بشکافید وتوی گیتهاب issue باز کنید\n\n
+
+
+شاید شرایط در آینده با پیشرفت اپ کم و کم تر شود</string>
 
 </resources>

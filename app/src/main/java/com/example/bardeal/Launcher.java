@@ -48,7 +48,8 @@ public class Launcher extends AppCompatActivity {
 
         myAuth = FirebaseAuth.getInstance();
         FirebaseUser user = myAuth.getCurrentUser();
-        brodcastedInternetReciver = new BrodcastedInternetReciver(this ,isEnLang() ,user);
+        brodcastedInternetReciver = new BrodcastedInternetReciver(this);
+
         intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         logo = findViewById(R.id.imageView3);
 
@@ -62,21 +63,8 @@ public class Launcher extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
                                       @Override
                                       public void run() {
-                                          if (isOnline() && isEnLang()) {
+                                          if (brodcastedInternetReciver.getConnection()) {
                                               checking();
-                                          } else if (!isEnLang()) {
-                                              // TODO : USE banner
-                                              Snackbar.make(logo, "Please change system language to English", Snackbar.LENGTH_LONG)
-                                                      .setAction("Learn More", new View.OnClickListener() {
-                                                          @Override
-                                                          public void onClick(View view) {
-                                                              String url = "https://www.etsglobal.org/pl/en/blog/news/importance-of-learning-english";
-                                                              CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-                                                              CustomTabsIntent customTabsIntent = builder.build();
-                                                              customTabsIntent.launchUrl(Launcher.this, Uri.parse(url));
-                                                          }
-                                                      }).show();
-
                                           }
                                       }
                                   }
@@ -88,15 +76,6 @@ public class Launcher extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         registerReceiver(brodcastedInternetReciver, intentFilter);
-    }
-
-    public boolean isEnLang() {
-        String lang = Locale.getDefault().getDisplayLanguage();
-        if (lang.equals("English")) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     @Override
@@ -116,13 +95,13 @@ public class Launcher extends AppCompatActivity {
 
     public void checking() {
 
-        if (user != null && isOnline() && isEnLang()) {
+        if (user != null && isOnline()) {
             Intent intent = new Intent(Launcher.this, MainActivity.class);
             startActivity(intent,
                     ActivityOptions.makeSceneTransitionAnimation(Launcher.this).toBundle());
 
             finish();
-        } else if (isOnline() && isEnLang()) {
+        } else if (isOnline()) {
             Intent intent = new Intent(Launcher.this, WelcomingActivity.class);
             startActivity(intent,
                     ActivityOptions.makeSceneTransitionAnimation(Launcher.this).toBundle());

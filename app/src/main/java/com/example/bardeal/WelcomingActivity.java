@@ -1,15 +1,19 @@
 package com.example.bardeal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Browser;
 import android.transition.Explode;
 import android.view.View;
 import android.view.Window;
@@ -17,6 +21,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 
@@ -41,6 +46,19 @@ public class WelcomingActivity extends AppCompatActivity {
 
         SliderAdapter sliderAdapter = new SliderAdapter(getApplicationContext());
 
+        new MaterialAlertDialogBuilder(this)
+                .setTitle("کمک برای استفاده راحت تر :)")
+                .setMessage(R.string.rudd)
+                .setNeutralButton("Github", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                        CustomTabsIntent customTabsIntent = builder.build();
+                        customTabsIntent.launchUrl(WelcomingActivity.this ,
+                                Uri.parse("https://github.com/Mehranalam"));
+                    }
+                })
+                .show();
 
         viewPager.setAdapter(sliderAdapter);
         dotsIndicator.setViewPager(viewPager);

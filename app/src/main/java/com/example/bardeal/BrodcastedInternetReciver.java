@@ -21,14 +21,14 @@ public class BrodcastedInternetReciver extends BroadcastReceiver {
 
     private ConstraintLayout rootview;
     private Activity activity;
-    private boolean isEnglish;
+//    private boolean isEnglish;
     public FirebaseUser myAuth;
     private Context context;
+    private boolean isonlineThisDevice;
+    private Banner banner;
 
-    public BrodcastedInternetReciver(Activity activity , boolean isEnglish , FirebaseUser myAuth){
+    public BrodcastedInternetReciver(Activity activity){
         this.activity = activity;
-        this.isEnglish = isEnglish;
-        this.myAuth = myAuth;
     }
 
     @Override
@@ -36,26 +36,25 @@ public class BrodcastedInternetReciver extends BroadcastReceiver {
         this.context = context;
         if (!isOnline(context)) {
             rootview = this.activity.findViewById(R.id.rootview);
-            Banner banner = new Banner.Builder(context).setParent(rootview)
-                    .setIcon(R.drawable.ic_baseline_network_check_24)
-                    .setMessage("connection is filed ... please back to connection ")
-                    .setLeftButton("Dismiss", new BannerInterface.OnClickListener() {
-                        @Override
-                        public void onClick(BannerInterface banner) {
-                            banner.dismiss();
-                        }
-                    })
-                    .setRightButton("Try Again", new BannerInterface.OnClickListener() {
-                        @Override
-                        public void onClick(BannerInterface banner) {
-                            checking();
-                        }
-                    })
+            banner = new Banner.Builder(context).setParent(rootview)
+                    .setIcon(R.drawable.ic_baseline_signal_cellular_connected_no_internet_4_bar_24)
+                    .setMessage("Internet connection is broken")
                     .create();
             banner.setButtonsTextColor(R.color.white);
-            banner.setBackgroundColor(this.activity.getResources().getColor(R.color.purple_200));
+            banner.setBackgroundColor(this.activity.getResources().getColor(R.color.backgroundForError));
             banner.show();
+        } else {
+            isonlineThisDevice = true;
+            if (banner != null){
+                banner.dismiss();
+                activity.finish();
+                activity.startActivity(activity.getIntent());
+            }
         }
+    }
+
+    public boolean getConnection(){
+        return isonlineThisDevice;
     }
 
     public boolean isOnline(Context context) {
@@ -66,22 +65,22 @@ public class BrodcastedInternetReciver extends BroadcastReceiver {
 
         return networkInfo != null && networkInfo.isConnectedOrConnecting();
     }
-
-    public void checking(){
-
-        if (myAuth != null && isOnline(context) && isEnglish) {
-            Intent intent = new Intent(activity, MainActivity.class);
-            this.activity.startActivity(intent,
-                    ActivityOptions.makeSceneTransitionAnimation(activity).toBundle());
-
-            this.activity.finish();
-        } else if (isOnline(context) && isEnglish) {
-            Intent intent = new Intent(activity, WelcomingActivity.class);
-            this.activity.startActivity(intent,
-                    ActivityOptions.makeSceneTransitionAnimation(activity).toBundle());
-
-            this.activity.finish();
-        }
-    }
+//
+//    public void checking(){
+//
+//        if (myAuth != null && isOnline(context) && isEnglish) {
+//            Intent intent = new Intent(activity, MainActivity.class);
+//            this.activity.startActivity(intent,
+//                    ActivityOptions.makeSceneTransitionAnimation(activity).toBundle());
+//
+//            this.activity.finish();
+//        } else if (isOnline(context) && isEnglish) {
+//            Intent intent = new Intent(activity, WelcomingActivity.class);
+//            this.activity.startActivity(intent,
+//                    ActivityOptions.makeSceneTransitionAnimation(activity).toBundle());
+//
+//            this.activity.finish();
+//        }
+//    }
 
 }

@@ -25,5 +25,7 @@ Refectors :
 - [ ] add twitter auth
 - [ ] start build (Retorfit Version)
 
+Issues Repoter :
+- Nobody .. :(
 
 

@@ -1,4 +1,4 @@
-# Bardeal(Firebase Version)
+# Bardeal
 
 An online shop under Android is a large app with many components of this program uses 
 the **firebase** service and the UI design idea of this program is inspired by 
@@ -16,16 +16,8 @@ UI Idea:
 
 - Dribbble : https://dribbble.com/shots/15313224/attachments/7069931?mode=media
 
-Refectors :
+TODO :
 
-- [x] use Banner openSource (Material)
-- [x] add BrodcastReciver INTERNET 
-- [x] add viewPager(welcome activity)
-- [x] add google auth
-- [ ] add twitter auth
-- [ ] start build (Retorfit Version)
 
-Issues Repoter :
-- Nobody .. :(
 
 

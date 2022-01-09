@@ -9,7 +9,6 @@ the following link. The minimum usable SDK is 21.
 Tools:
 
 - Firebase : https://firebase.google.com/
-- Material Library : https://material.io/
 - Material Banner : https://github.com/sergivonavi/MaterialBanner
 - Google Material Library : https://material.io/components?platform=android
 

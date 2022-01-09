@@ -95,6 +95,9 @@ public class Launcher extends AppCompatActivity {
 
     public void checking() {
 
+        myAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = myAuth.getCurrentUser();
+
         if (user != null && isOnline()) {
             Intent intent = new Intent(Launcher.this, MainActivity.class);
             startActivity(intent,

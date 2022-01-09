@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/signal_cellular_connected_no_internet_4_bar/baseline_signal_cellular_connected_no_internet_4_bar_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/account_circle/baseline_account_circle_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_signal_cellular_connected_no_internet_4_bar_24" />
+                            <entry key="outputName" value="ic_baseline_account_circle_24" />
                           </map>
                         </option>
                       </PersistentState>

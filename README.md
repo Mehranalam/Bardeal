@@ -1,5 +1,5 @@
  <p>
-  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" alt="my picture" height=50 width=100 style="float: right;"/>
+  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" alt="my picture" height=50 width=60 style="float: right;"/>
 This is the paragraph from which you want the image to be floated to the
 right. This is a test. It is only a test. Lorem ipsum dolor sit amet,
 consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et

@@ -28,6 +28,8 @@ TODO :
 - [ ] Use [Multithreading](https://developer.android.com/guide/components/processes-and-threads)
 - [ ] Use Clean [Architecture](https://www.toptal.com/android/android-apps-mvvm-with-clean-architecture)
 - [X] Use in project from [Firebase Authentication](https://firebase.google.com/docs/auth/?authuser=0)
+- Twitter
+- Google
 - [ ] Use [FireStore](https://firebase.google.com/docs/firestore?authuser=0) for Store data from Image to Text 
 
 

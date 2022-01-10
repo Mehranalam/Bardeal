@@ -7,13 +7,9 @@ the following link. The minimum usable SDK is 21.
 **use VPN** & **English system lang**
 
 <div>
-  <a href="/screenShots/Screenshot_2022-01-10_13-54-54.png">
   <img src="/screenShots/Screenshot_2022-01-10_13-54-54.png" width="200" height"300"/>
-    </a> <a href="https://github.com/Mehranalam/NewsApp/raw/main/apk/debug/app-debug.apk">
-  <img src="https://raw.githubusercontent.com/Mehranalam/NewsApp/main/tmp/google-play-badge.png" width="200" height"300"/>
-    </a> <a href="https://github.com/Mehranalam/NewsApp/raw/main/apk/debug/app-debug.apk">
-  <img src="https://raw.githubusercontent.com/Mehranalam/NewsApp/main/tmp/google-play-badge.png" width="200" height"300"/>
-    </a>
+  <img src="screenShots/Screenshot_2022-01-10_13-56-26.png" width="200" height"300"/>
+  <img src="/screenShots/Screenshot_Categoris08.png" width="200" height"300"/>
   </div>
 
 Tools:

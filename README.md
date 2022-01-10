@@ -1,7 +1,5 @@
 <div>
-  <div id="image" style="display:inline;">
-  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" width="40" height"40"/>
-    </div>
+  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" width="100" height"100"/><br>
   </div>
 
 An online shop under Android is a large app with many components of this program uses 

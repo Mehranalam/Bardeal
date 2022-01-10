@@ -1,6 +1,10 @@
 <div>
-  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" width="40" height"40"/><h1>Bardeal</h1>
-
+  <div id="image" style="display:inline;">
+  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" width="40" height"40"/>
+    </div>
+  <div id="texts" style="display:inline; white-space:nowrap;"> 
+        A very long text(about 300 words) 
+    </div>
   </div>
 
 An online shop under Android is a large app with many components of this program uses 

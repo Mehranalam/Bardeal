@@ -1,5 +1,5 @@
 <div>
-  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" width="50" height"50"/><p>Bardd</a><br>
+  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" width="40" height"40"/><p>Bardeal</a><br>
   </div>
 
 An online shop under Android is a large app with many components of this program uses 

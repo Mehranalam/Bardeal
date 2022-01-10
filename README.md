@@ -27,6 +27,7 @@ TODO :
 - [ ] Change App architecture to [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
 - [ ] Use [Multithreading](https://developer.android.com/guide/components/processes-and-threads)
 - [ ] Use Clean [Architecture](https://www.toptal.com/android/android-apps-mvvm-with-clean-architecture)
+- [X] Add Firebase [Authentication](https://firebase.google.com/docs/auth/?authuser=0)
 
 
 

@@ -1,6 +1,6 @@
  <h1>
-  <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" alt="my picture" height=30 width=30 style="float: right;"/>
-Bardeal
+ <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" alt="my picture" height=40 width=40 style="float: right;"/>
+ Bardeal
 </h1>
   
 An online shop under Android is a large app with many components of this program uses 

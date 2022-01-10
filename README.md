@@ -6,6 +6,16 @@ the following link. The minimum usable SDK is 21.
 
 **use VPN** & **English system lang**
 
+<div>
+  <a href="https://github.com/Mehranalam/NewsApp/raw/main/apk/debug/app-debug.apk">
+  <img src="https://raw.githubusercontent.com/Mehranalam/NewsApp/main/tmp/google-play-badge.png" width="200" height"300"/>
+    </a> <a href="https://github.com/Mehranalam/NewsApp/raw/main/apk/debug/app-debug.apk">
+  <img src="https://raw.githubusercontent.com/Mehranalam/NewsApp/main/tmp/google-play-badge.png" width="200" height"300"/>
+    </a> <a href="https://github.com/Mehranalam/NewsApp/raw/main/apk/debug/app-debug.apk">
+  <img src="https://raw.githubusercontent.com/Mehranalam/NewsApp/main/tmp/google-play-badge.png" width="200" height"300"/>
+    </a>
+  </div>
+
 Tools:
 
 - Firebase : https://firebase.google.com/
@@ -21,7 +31,6 @@ TODO :
 - [ ] Change App architecture to [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
 - [ ] Use [Multithreading](https://developer.android.com/guide/components/processes-and-threads)
 - [ ] Use Clean [Architecture](https://www.toptal.com/android/android-apps-mvvm-with-clean-architecture)
-
 
 
 

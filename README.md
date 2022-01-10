@@ -1,11 +1,13 @@
-# Bardeal
+<div>
+    <img src="/app/src/main/res/drawable/_8481652cef1014c0b5e4981.png" width="40" height"40"/>
+  <h1>Bardeal</h1>
+  </div>
 
 An online shop under Android is a large app with many components of this program uses 
 the **firebase** service and the UI design idea of this program is inspired by 
 the following link. The minimum usable SDK is 21.
 
 **use VPN** & **English system lang**
-
 <div>
   <img src="/screenShots/Screenshot_2022-01-10_13-54-54.png" width="200" height"300"/>
   <img src="screenShots/Screenshot_2022-01-10_13-56-26.png" width="204" height"304"/>

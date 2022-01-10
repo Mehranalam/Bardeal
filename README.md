@@ -32,8 +32,7 @@ TODO :
 - [X] Use in project from [Firebase Authentication](https://firebase.google.com/docs/auth/?authuser=0)
 - [Twitter](https://developer.twitter.com/en/docs)
 - [Google](https://developers.google.com/android/guides/client-auth?authuser=0)
-- [ ] use Multithreading
-- [ ] Use [FireStore](https://firebase.google.com/docs/firestore?authuser=0) for Store data from Image to Text 
+- [ ] Use [FireStore](https://firebase.google.com/docs/firestore?authuser=0) for Store Global data 
 
 
 

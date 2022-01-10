@@ -13,24 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:screenOrientation="portrait"
             android:name=".Categories"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".ForgetPassweordAcrivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".WelcomingActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".Launcher"
             android:exported="true">
             <intent-filter>

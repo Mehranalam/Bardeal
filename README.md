@@ -10,7 +10,7 @@ the following link. The minimum usable SDK is 21.
 **use VPN** & **English system lang**
 
 <details>
-<summary>Screen Shots/summary>
+<summary>Screen Shots</summary>
 <img src="/screenShots/Screenshot_2022-01-10_13-54-54.png" width="200" height"300"/>
   <img src="screenShots/Screenshot_2022-01-10_13-56-26.png" width="204" height"304"/>
   <img src="/screenShots/Screenshot_Categoris08.png" width="200" height"300"/>

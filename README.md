@@ -21,10 +21,7 @@ Tools:
 - Firebase : https://firebase.google.com/
 - Material Banner : https://github.com/sergivonavi/MaterialBanner
 - Google Material Library : https://material.io/components?platform=android
-
-UI Idea:
-
-- Dribbble : https://dribbble.com/shots/15313224/attachments/7069931?mode=media
+- UI idea : https://dribbble.com/shots/15313224/attachments/7069931?mode=media
 
 TODO :
 

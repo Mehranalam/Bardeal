@@ -17,7 +17,7 @@
         <entry key="app/src/main/res/layout/activity_sign_up_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_welcoming_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/cashing_fragment.xml" value="0.17" />
-        <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/favorite_fragment.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/fragment_store.xml" value="0.25" />
         <entry key="app/src/main/res/layout/itemsofview.xml" value="0.15625" />
@@ -31,12 +31,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.5" />
-      </ProjectState>
-    </option>
   </component>
 </project>

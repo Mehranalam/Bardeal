@@ -6,9 +6,11 @@
     android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="107dp"
         android:layout_height="102dp"
-        android:src="@tools:sample/avatars"
+        android:src="@drawable/profile_example"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
@@ -72,7 +74,7 @@
         app:layout_constraintGuide_begin="314dp" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/nameOfUser"
         android:layout_width="164dp"
         android:layout_height="31dp"
         android:text="Tab to set name"
@@ -84,7 +86,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/dataOfJoin"
         android:layout_width="135dp"
         android:layout_height="20dp"
         android:text="2017/11/06 12:11:58 "
@@ -115,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="358dp" />
+        app:layout_constraintGuide_begin="378dp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="263dp"
@@ -180,6 +182,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewForStoreSelectCategories"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
@@ -190,11 +193,12 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
 
         <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -237,8 +241,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="#FF5722"
+                android:minHeight="48dp"
                 android:text="👓 Spectacle"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </RadioGroup>
 
@@ -250,12 +256,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="715dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="395dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

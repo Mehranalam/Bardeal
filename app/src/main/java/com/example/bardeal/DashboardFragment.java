@@ -28,7 +28,7 @@ public class DashboardFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private FirebaseUser user;
-    private ModelBottomSheet modelBottomSheet;
+//    private ModelBottomSheet modelBottomSheet;
 
     public DashboardFragment() {
         super(R.layout.dashboard_fragment);
@@ -38,41 +38,41 @@ public class DashboardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        profileImage = view.findViewById(R.id.profileImage);
-        name = view.findViewById(R.id.nameOfUser);
-        dateOfJoinToBardeal = view.findViewById(R.id.dataOfJoin);
+//        profileImage = view.findViewById(R.id.profileImage);
+//        name = view.findViewById(R.id.nameOfUser);
+//        dateOfJoinToBardeal = view.findViewById(R.id.dataOfJoin);
 
-        lenOfCurrectSizeOfText = name.getText().length();
+//        lenOfCurrectSizeOfText = name.getText().length();
 
-
-
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        user = FirebaseAuth.getInstance().getCurrentUser();
-
-        // TODO : get and Set profile image and set name ...
-
-        name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                modelBottomSheet = new ModelBottomSheet();
-                modelBottomSheet.show(getActivity().getSupportFragmentManager() ,"goood");
-            }
-        });
 
     }
 
-   public static class ModelBottomSheet extends BottomSheetDialogFragment {
-        @Nullable
-        @Override
-        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            View view = LayoutInflater.from(getContext())
-                    .inflate(R.layout.cashing_fragment ,container ,false);
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        user = FirebaseAuth.getInstance().getCurrentUser();
+//
+//        // TODO : get and Set profile image and set name ...
+//
+//        name.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                modelBottomSheet = new ModelBottomSheet();
+//                modelBottomSheet.show(getActivity().getSupportFragmentManager() ,"goood");
+//            }
+//        });
+//
+//    }
+//
+//   public static class ModelBottomSheet extends BottomSheetDialogFragment {
+//        @Nullable
+//        @Override
+//        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//            View view = LayoutInflater.from(getContext())
+//                    .inflate(R.layout.cashing_fragment ,container ,false);
+//
+//            return view;
+//        }
+//    }
 
-            return view;
-        }
-    }
 }

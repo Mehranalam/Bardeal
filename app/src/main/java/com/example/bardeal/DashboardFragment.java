@@ -21,6 +21,7 @@ public class DashboardFragment extends Fragment {
 
     private ImageView profileImage;
     private TextView name;
+    private int lenOfCurrectSizeOfText;
     private TextView dateOfJoinToBardeal;
     private ImageView menu;
     private RadioGroup categoriesSelected;
@@ -40,9 +41,9 @@ public class DashboardFragment extends Fragment {
         profileImage = view.findViewById(R.id.profileImage);
         name = view.findViewById(R.id.nameOfUser);
         dateOfJoinToBardeal = view.findViewById(R.id.dataOfJoin);
-        categoriesSelected = view.findViewById(R.id.radioGroup);
 
-        recyclerView = view.findViewById(R.id.recyclerviewForStoreSelectCategories);
+        lenOfCurrectSizeOfText = name.getText().length();
+
 
 
     }

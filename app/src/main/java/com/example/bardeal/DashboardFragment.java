@@ -38,9 +38,9 @@ public class DashboardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        profileImage = view.findViewById(R.id.profileImage);
-//        name = view.findViewById(R.id.nameOfUser);
-//        dateOfJoinToBardeal = view.findViewById(R.id.dataOfJoin);
+        profileImage = view.findViewById(R.id.profileImage);
+        name = view.findViewById(R.id.nameOfUser);
+        dateOfJoinToBardeal = view.findViewById(R.id.dataOfJoin);
 
 //        lenOfCurrectSizeOfText = name.getText().length();
 

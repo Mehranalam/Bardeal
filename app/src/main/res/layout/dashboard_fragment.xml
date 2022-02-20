@@ -3,19 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:elevation="20dp">
 
+<!--android:layout_gravity="left"-->
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
+        android:id="@+id/profileImage"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_gravity="left"
         android:src="@drawable/profile_example"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:ignore="ImageContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -23,6 +25,24 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="91dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewOfFeature"
+        android:layout_width="329dp"
+        android:layout_height="218dp"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/profileImage"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/feature_use_this_bardeal"
+            android:contentDescription="TODO" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -46,12 +66,13 @@
         app:layout_constraintGuide_begin="105dp" />
 
     <TextView
+        android:id="@+id/nameOfUser"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Tab To Set Your Name"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/dataOfJoin"
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -76,7 +97,7 @@
         app:layout_constraintGuide_begin="301dp" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/dataOfJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="06/11/2017 12:26:18 "
@@ -93,5 +114,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="348dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

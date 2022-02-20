@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class DashboardFragment extends Fragment {
 
@@ -41,6 +42,14 @@ public class DashboardFragment extends Fragment {
         profileImage = view.findViewById(R.id.profileImage);
         name = view.findViewById(R.id.nameOfUser);
         dateOfJoinToBardeal = view.findViewById(R.id.dataOfJoin);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
+
+//        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+//                .setDisplayName("empty")
+//                .build();
+
+
 
 //        lenOfCurrectSizeOfText = name.getText().length();
 

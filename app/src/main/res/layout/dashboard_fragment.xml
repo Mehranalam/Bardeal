@@ -31,6 +31,7 @@
         android:layout_width="329dp"
         android:layout_height="218dp"
         app:cardCornerRadius="18dp"
+        app:cardElevation="34dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/profileImage"
@@ -39,8 +40,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/feature_use_this_bardeal"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            android:src="@drawable/feature_use_this_bardeal" />
 
     </androidx.cardview.widget.CardView>
 
@@ -121,5 +122,43 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="348dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="373dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#ED0D0D"
+        android:text="Log out"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_baseline_login_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewOfFeature"
+        app:layout_constraintStart_toStartOf="@+id/cardViewOfFeature"
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="631dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/storeCategoreis"
+        android:layout_width="317dp"
+        android:layout_height="246dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewOfFeature"
+        app:layout_constraintStart_toStartOf="@+id/cardViewOfFeature"
+        app:layout_constraintTop_toTopOf="@+id/guideline9">
+
+        <ListView
+            android:id="@+id/storeCategoriesincardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

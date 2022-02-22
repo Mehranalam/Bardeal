@@ -3,6 +3,8 @@ package com.example.bardeal;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,11 +15,17 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private BrodcastedInternetReciver brodcastedInternetReciver;
+    private IntentFilter intentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        brodcastedInternetReciver = new BrodcastedInternetReciver(this ,
+                findViewById(R.id.storage));
+        intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
 
         getWindow().setStatusBarColor(getResources().getColor(R.color.purple_200));
 
@@ -63,5 +71,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(brodcastedInternetReciver ,intentFilter);
     }
 }

@@ -7,6 +7,8 @@ import androidx.core.content.ContextCompat;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -26,6 +28,8 @@ public class ForgetPassweordAcrivity extends AppCompatActivity {
 
     private TextInputLayout emailRecovery;
     private Button button;
+    private BrodcastedInternetReciver brodcastedInternetReciver;
+    private IntentFilter intentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,10 @@ public class ForgetPassweordAcrivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getApplicationContext()
                 , R.color.purple_200));
+
+        brodcastedInternetReciver = new BrodcastedInternetReciver(this ,
+                findViewById(R.id.storage));
+        intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
 
         emailRecovery = findViewById(R.id.inputEmailForSetForgetPassword);
         button = findViewById(R.id.button);
@@ -73,5 +81,11 @@ public class ForgetPassweordAcrivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(brodcastedInternetReciver ,intentFilter);
     }
 }

@@ -14,7 +14,9 @@ import androidx.core.content.ContextCompat;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.transition.Explode;
@@ -51,6 +53,8 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth myAuth;
     private ImageView twtter;
     private SignUpActivity isConvert = this;
+    private BrodcastedInternetReciver brodcastedInternetReciver;
+    private IntentFilter intentFilter;
 
 
     @Override
@@ -62,6 +66,11 @@ public class SignUpActivity extends AppCompatActivity {
         password = findViewById(R.id.CreatePasswordSignUp);
         google = findViewById(R.id.googleAPISignUp);
         twtter = findViewById(R.id.twitterSignUp);
+
+        brodcastedInternetReciver = new BrodcastedInternetReciver(this ,
+                findViewById(R.id.storage));
+        intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+
         twtter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +148,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        registerReceiver(brodcastedInternetReciver ,intentFilter);
 
         FirebaseUser currentUser = myAuth.getCurrentUser();
         if (currentUser != null) {

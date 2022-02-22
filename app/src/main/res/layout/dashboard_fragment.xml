@@ -33,7 +33,7 @@
         app:cardCornerRadius="18dp"
         app:cardElevation="34dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/menu_for_some_works"
         app:layout_constraintStart_toStartOf="@+id/profileImage"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
 
@@ -107,9 +107,9 @@
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/menu_for_some_works"
+        android:layout_width="19dp"
+        android:layout_height="21dp"
         android:layout_marginEnd="14dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"

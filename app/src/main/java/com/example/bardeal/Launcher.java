@@ -48,7 +48,8 @@ public class Launcher extends AppCompatActivity {
 
         myAuth = FirebaseAuth.getInstance();
         FirebaseUser user = myAuth.getCurrentUser();
-        brodcastedInternetReciver = new BrodcastedInternetReciver(this);
+        brodcastedInternetReciver = new BrodcastedInternetReciver(this ,
+                findViewById(R.id.rootview));
 
         intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         logo = findViewById(R.id.imageView3);

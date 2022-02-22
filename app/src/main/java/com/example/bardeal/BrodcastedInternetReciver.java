@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.View;
 
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,21 +22,20 @@ public class BrodcastedInternetReciver extends BroadcastReceiver {
 
     private ConstraintLayout rootview;
     private Activity activity;
-//    private boolean isEnglish;
     public FirebaseUser myAuth;
     private Context context;
     private boolean isonlineThisDevice;
     private Banner banner;
 
-    public BrodcastedInternetReciver(Activity activity){
+    public BrodcastedInternetReciver(Activity activity , ConstraintLayout rootview){
         this.activity = activity;
+        this.rootview = rootview;
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
         this.context = context;
         if (!isOnline(context)) {
-            rootview = this.activity.findViewById(R.id.rootview);
             banner = new Banner.Builder(context).setParent(rootview)
                     .setIcon(R.drawable.ic_baseline_signal_cellular_connected_no_internet_4_bar_24)
                     .setMessage("Internet connection is broken")

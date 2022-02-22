@@ -14,7 +14,9 @@ import androidx.core.content.ContextCompat;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.transition.Explode;
@@ -49,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth myAuth;
     private LoginActivity forEnableActivity = this;
     private TextView forgetText;
+    private BrodcastedInternetReciver brodcastedInternetReciver;
+    private IntentFilter intentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,10 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().setExitTransition(new Slide());
 
         myAuth = FirebaseAuth.getInstance();
+
+        brodcastedInternetReciver = new BrodcastedInternetReciver(this ,
+                findViewById(R.id.storage));
+        intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
 
         email = findViewById(R.id.EmailInput);
         password = findViewById(R.id.passwordInput);
@@ -172,6 +180,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        registerReceiver(brodcastedInternetReciver ,intentFilter);
         FirebaseUser isCurrentUser = myAuth.getCurrentUser();
         if (isCurrentUser != null) {
             Snackbar.make(email, R.string.snackerbanner, Snackbar.LENGTH_SHORT)

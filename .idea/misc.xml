@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.5166666666666667" />
+        <entry key="app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.101" />
         <entry key="app/src/main/res/drawable/ic_baseline_network_check_24.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/drawable/progress.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/selected_color_chips.xml" value="0.209375" />
@@ -17,6 +18,7 @@
         <entry key="app/src/main/res/layout/activity_sign_up_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_welcoming_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/cashing_fragment.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/change_name_bottom_sheet.xml" value="0.33" />
         <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/favorite_fragment.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/fragment_store.xml" value="0.25" />
@@ -32,5 +34,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

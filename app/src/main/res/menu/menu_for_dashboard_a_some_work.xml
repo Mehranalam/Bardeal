@@ -5,6 +5,7 @@
         android:title="Change Your Name" />
     <item
         android:id="@+id/change_image_prof"
+        android:icon="@drawable/ic_baseline_add_photo_alternate_24"
         android:title="Change Display Photo" />
     <item
         android:id="@+id/change_categories"

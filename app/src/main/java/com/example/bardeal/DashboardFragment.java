@@ -25,14 +25,11 @@ public class DashboardFragment extends Fragment {
 
     private ImageView profileImage;
     private TextView name;
-    private int lenOfCurrectSizeOfText;
     private TextView dateOfJoinToBardeal;
     private ImageView menu;
-    private RadioGroup categoriesSelected;
 
-    private RecyclerView recyclerView;
     private FirebaseUser user;
-//    private ModelBottomSheet modelBottomSheet;
+    private ModelBottomSheet modelBottomSheet;
 
     public DashboardFragment() {
         super(R.layout.dashboard_fragment);
@@ -52,32 +49,24 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // show menu
+                showMenu(view, R.menu.menu_for_dashboard_a_some_work);
             }
         });
-
-//        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
-//                .setDisplayName("empty")
-//                .build();
-
-
-
-//        lenOfCurrectSizeOfText = name.getText().length();
-
-
     }
 
-    private void showMenu(View v , @MenuRes int menuRes){
-        PopupMenu popupMenu = new PopupMenu(getContext() ,v);
-        popupMenu.getMenuInflater().inflate(menuRes ,popupMenu.getMenu());
+    private void showMenu(View v,@MenuRes int menuRes){
+        PopupMenu popupMenu = new PopupMenu(getContext(), v);
+        popupMenu.getMenuInflater().inflate(menuRes, popupMenu.getMenu());
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                if (menuItem.getItemId() == R.id.change_name){
+                if (menuItem.getItemId() == R.id.change_name) {
                     // todo : change display name
-
+                    modelBottomSheet = new ModelBottomSheet();
+                    modelBottomSheet.show(getActivity().getSupportFragmentManager() ,"goood");
                     return true;
-                } else if (menuItem.getItemId() == R.id.change_image_prof){
+                } else if (menuItem.getItemId() == R.id.change_image_prof) {
                     // todo : change display Photo
 
                     return true;
@@ -91,37 +80,19 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+
         popupMenu.show();
     }
 
+       public static class ModelBottomSheet extends BottomSheetDialogFragment {
+        @Nullable
+        @Override
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            View view = LayoutInflater.from(getContext())
+                    .inflate(R.layout.change_name_bottom_sheet ,container ,false);
 
-
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        user = FirebaseAuth.getInstance().getCurrentUser();
-//
-//        // TODO : get and Set profile image and set name ...
-//
-//        name.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                modelBottomSheet = new ModelBottomSheet();
-//                modelBottomSheet.show(getActivity().getSupportFragmentManager() ,"goood");
-//            }
-//        });
-//
-//    }
-//
-//   public static class ModelBottomSheet extends BottomSheetDialogFragment {
-//        @Nullable
-//        @Override
-//        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//            View view = LayoutInflater.from(getContext())
-//                    .inflate(R.layout.cashing_fragment ,container ,false);
-//
-//            return view;
-//        }
-//    }
+            return view;
+        }
+    }
 
 }

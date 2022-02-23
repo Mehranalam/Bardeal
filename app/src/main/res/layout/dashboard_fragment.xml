@@ -131,6 +131,7 @@
         android:text="Log out"
         android:textAllCaps="false"
         android:textSize="14sp"
+        app:cornerRadius="34dp"
         app:icon="@drawable/ic_baseline_login_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cardViewOfFeature"

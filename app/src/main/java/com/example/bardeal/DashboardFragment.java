@@ -7,29 +7,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.MenuRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class DashboardFragment extends Fragment {
 
-    private ImageView profileImage;
     private TextView name;
-    private TextView dateOfJoinToBardeal;
     private ImageView menu;
 
     private FirebaseUser user;
-    private ModelBottomSheet modelBottomSheet;
+    private ModelBottomSheetChangeDisplayName modelBottomSheet;
+    private ModelBottomSheetChangeCategories bottomSheetChangeCategories;
+    private ModelBottomSheetChangeImageDisplay bottomSheetChangeImageDisplay;
 
     public DashboardFragment() {
         super(R.layout.dashboard_fragment);
@@ -40,10 +37,18 @@ public class DashboardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         menu = view.findViewById(R.id.menu_for_some_works);
-        profileImage = view.findViewById(R.id.profileImage);
         name = view.findViewById(R.id.nameOfUser);
-        dateOfJoinToBardeal = view.findViewById(R.id.dataOfJoin);
         user = FirebaseAuth.getInstance().getCurrentUser();
+
+        // get name from firebase server and set this to text view for
+        // name
+
+        // if name from firebase is empty set (tab to set your name)
+        if (user.getDisplayName() == null) {
+            name.setText("Display Name is Empty");
+        } else {
+            name.setText(user.getDisplayName());
+        }
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,15 +68,25 @@ public class DashboardFragment extends Fragment {
             public boolean onMenuItemClick(MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.change_name) {
                     // todo : change display name
-                    modelBottomSheet = new ModelBottomSheet();
-                    modelBottomSheet.show(getActivity().getSupportFragmentManager() ,"goood");
+                    modelBottomSheet = new ModelBottomSheetChangeDisplayName();
+                    modelBottomSheet.show(getActivity()
+                            .getSupportFragmentManager()
+                            ,"Display Name will change");
                     return true;
                 } else if (menuItem.getItemId() == R.id.change_image_prof) {
                     // todo : change display Photo
+                    bottomSheetChangeImageDisplay = new ModelBottomSheetChangeImageDisplay();
+                    bottomSheetChangeImageDisplay.show(getActivity()
+                            .getSupportFragmentManager()
+                            ,"ImageDisplay will change");
 
                     return true;
                 } else if (menuItem.getItemId() == R.id.change_categories) {
                     // todo : change categories selected
+                    bottomSheetChangeCategories = new ModelBottomSheetChangeCategories();
+                    bottomSheetChangeCategories.show(getActivity()
+                                    .getSupportFragmentManager()
+                            ,"Categories will change");
 
                     return true;
                 }
@@ -84,7 +99,29 @@ public class DashboardFragment extends Fragment {
         popupMenu.show();
     }
 
-       public static class ModelBottomSheet extends BottomSheetDialogFragment {
+       public static class ModelBottomSheetChangeDisplayName extends BottomSheetDialogFragment {
+        @Nullable
+        @Override
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            View view = LayoutInflater.from(getContext())
+                    .inflate(R.layout.change_name_bottom_sheet ,container ,false);
+
+            return view;
+        }
+    }
+
+    public static class ModelBottomSheetChangeImageDisplay extends BottomSheetDialogFragment {
+        @Nullable
+        @Override
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            View view = LayoutInflater.from(getContext())
+                    .inflate(R.layout.change_name_bottom_sheet ,container ,false);
+
+            return view;
+        }
+    }
+
+    public static class ModelBottomSheetChangeCategories extends BottomSheetDialogFragment {
         @Nullable
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

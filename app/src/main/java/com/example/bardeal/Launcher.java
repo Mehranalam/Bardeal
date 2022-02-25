@@ -47,7 +47,7 @@ public class Launcher extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         myAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = myAuth.getCurrentUser();
+        user = myAuth.getCurrentUser();
         brodcastedInternetReciver = new BrodcastedInternetReciver(this ,
                 findViewById(R.id.rootview));
 

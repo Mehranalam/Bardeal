@@ -10,4 +10,8 @@
     <item
         android:id="@+id/change_categories"
         android:title="Change Categories Selected" />
+
+    <item
+        android:id="@+id/logout"
+        android:title="Log out" />
 </menu>

@@ -108,8 +108,8 @@
 
     <ImageView
         android:id="@+id/menu_for_some_works"
-        android:layout_width="19dp"
-        android:layout_height="21dp"
+        android:layout_width="30dp"
+        android:layout_height="26dp"
         android:layout_marginEnd="14dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,21 +122,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="348dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="373dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#ED0D0D"
-        android:text="Log out"
-        android:textAllCaps="false"
-        android:textSize="14sp"
-        app:cornerRadius="34dp"
-        app:icon="@drawable/ic_baseline_login_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/cardViewOfFeature"
-        app:layout_constraintStart_toStartOf="@+id/cardViewOfFeature"
-        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"

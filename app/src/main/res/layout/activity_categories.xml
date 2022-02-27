@@ -144,5 +144,17 @@
 
     </com.google.android.material.chip.ChipGroup>
 
+    <TextView
+        android:id="@+id/notNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="not now!"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nextButton2"
+        app:layout_constraintStart_toStartOf="@+id/nextButton2"
+        app:layout_constraintTop_toBottomOf="@+id/nextButton2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

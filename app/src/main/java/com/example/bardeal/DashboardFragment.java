@@ -1,6 +1,11 @@
 package com.example.bardeal;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +16,10 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.MenuRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +32,9 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+
+import java.io.FileNotFoundException;
+import java.util.BitSet;
 
 public class DashboardFragment extends Fragment {
 
@@ -130,7 +142,7 @@ public class DashboardFragment extends Fragment {
                                 , Toast.LENGTH_SHORT)
                                 .show();
                     } else {
-                        Toast.makeText(getContext() ,"Please Wait ..." , Toast.LENGTH_LONG)
+                        Toast.makeText(getContext(), "Please Wait ...", Toast.LENGTH_LONG)
                                 .show();
                         UserProfileChangeRequest userProfileChangeRequest =
                                 new UserProfileChangeRequest.Builder()
@@ -143,17 +155,17 @@ public class DashboardFragment extends Fragment {
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()){
+                                        if (task.isSuccessful()) {
                                             Toast.makeText(getContext()
-                                                    ,"Change Name Successful"
-                                                    ,Toast.LENGTH_SHORT).show();
+                                                    , "Change Name Successful"
+                                                    , Toast.LENGTH_SHORT).show();
 
                                             name.setText(inputLayout.getEditText()
                                                     .getText().toString());
                                         } else {
                                             Toast.makeText(getContext()
-                                                          , "Please Check vpn connection!"
-                                                    ,Toast.LENGTH_LONG)
+                                                    , "Please Check vpn connection!"
+                                                    , Toast.LENGTH_LONG)
                                                     .show();
                                         }
                                     }
@@ -177,8 +189,41 @@ public class DashboardFragment extends Fragment {
 
 
             View view = LayoutInflater.from(getContext())
-                    .inflate(R.layout.change_name_bottom_sheet, container, false);
+                    .inflate(R.layout.pick_image_from_gallery_change_photo, container, false);
 
+            // todo : change image prof
+            ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    new ActivityResultCallback<ActivityResult>() {
+                        @Override
+                        public void onActivityResult(ActivityResult result) {
+                            if (result.getResultCode() == Activity.RESULT_OK) {
+                                Intent data = result.getData();
+                                String pathOfImage = data.toString();
+                                try {
+                                    Bitmap bitmapImage = BitmapFactory.decodeStream(getContext().openFileInput(pathOfImage));
+                                    // TODO : ADD TO FIREBASE STORAGE AND FROM THIS ADD TO IMAGE PROFILE
+                                } catch (FileNotFoundException e) {
+                                    e.printStackTrace();
+                                    Toast.makeText(getContext(), "Not file exits!"
+                                            , Toast.LENGTH_SHORT)
+                                            .show();
+                                }
+                            }
+                        }
+                    });
+
+            Button button = view.findViewById(R.id.goToStorage);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Intent.ACTION_PICK
+                            , MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+                    activityResultLauncher.launch(intent);
+
+                }
+            });
 
 
             return view;
@@ -191,7 +236,6 @@ public class DashboardFragment extends Fragment {
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = LayoutInflater.from(getContext())
                     .inflate(R.layout.change_name_bottom_sheet, container, false);
-
             return view;
         }
     }

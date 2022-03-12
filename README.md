@@ -32,7 +32,7 @@ TODO :
 - [X] Use in project from [Firebase Authentication](https://firebase.google.com/docs/auth/?authuser=0)
 - [Twitter](https://developer.twitter.com/en/docs)
 - [Google](https://developers.google.com/android/guides/client-auth?authuser=0)
-- [ ] Use [FireStorage](https://firebase.google.com/docs/firestorage?authuser=0) for Store Global data 
+- [ ] Use [Cloud Storage](https://firebase.google.com/docs/storage/) for Store Global data 
 
 
 

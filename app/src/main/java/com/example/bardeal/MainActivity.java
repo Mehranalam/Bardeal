@@ -59,9 +59,11 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 } else if (item.getItemId() == R.id.dashboard) {
+                    DashboardFragment dashboardFragment = new
+                            DashboardFragment(getApplicationContext());
                     getSupportFragmentManager().beginTransaction()
                             .setReorderingAllowed(true)
-                            .replace(R.id.fragment_tag ,DashboardFragment.class ,null)
+                            .replace(R.id.fragment_tag ,dashboardFragment ,null)
                             .commit();
                     return true;
                 }

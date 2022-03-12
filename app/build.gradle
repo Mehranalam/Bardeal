@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.pnikosis:materialish-progress:1.7'
     implementation "androidx.browser:browser:1.4.0"
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-storage'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'

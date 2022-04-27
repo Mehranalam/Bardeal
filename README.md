@@ -34,3 +34,12 @@ TODO :
 - [Google](https://developers.google.com/android/guides/client-auth?authuser=0)
 - [ ] Use [Cloud Storage](https://firebase.google.com/docs/storage/) for Store Global data and personal users data (image profile, categories selected and more)
 
+
+<div>
+  <a href="https://raw.githubusercontent.com/Mehranalam/Bardeal/main/screenShots/beta.txt">
+  <img src="/screenShots/google-play-badge.png" width="200" height"300"/>
+    </a>
+  </div>
+  
+  more :
+  - News Application : https://github.com/Mehranalam/NewsApp

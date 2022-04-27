@@ -41,5 +41,7 @@ TODO :
     </a>
   </div>
   
-  more :
+  More :
   - News Application : https://github.com/Mehranalam/NewsApp
+  - Guard : https://github.com/Mehranalam/Guard
+  - Emoji : https://github.com/Mehranalam/Emoji

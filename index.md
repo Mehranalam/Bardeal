@@ -6,6 +6,10 @@ A store application on the Android platform has a management panel for the store
 
 This project will continue its development soon and it will surely become one of the most popular Android applications on Github with the most possible features. This project is developed entirely with interest and has no financial benefit for its developer.
 
+### Contributing
+
+This project aims to build a portfolio and prove the developer's skills for future cooperation with companies that need a good developer. As a result, we are sorry to accept requests by unauthorized people.
+
 ### GNU General Public License v3.0
 
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.

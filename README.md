@@ -25,6 +25,7 @@ TODO :
 - [Twitter](https://developer.twitter.com/en/docs)
 - [Google](https://developers.google.com/android/guides/client-auth?authuser=0)
 - [ ] Use [Cloud Storage](https://firebase.google.com/docs/storage/) for Store Global data and personal users data (image profile, categories selected and more)
+- [ ] Re-design UI
 
 
 <div>

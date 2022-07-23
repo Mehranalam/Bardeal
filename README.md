@@ -5,10 +5,6 @@ the **firebase** service and the UI design idea of
 this program is inspired by 
 the following link. The minimum usable SDK is 21.
 
-
-
-**use VPN** & **English system lang**
-
 Tools:
 
 - Firebase : https://firebase.google.com/

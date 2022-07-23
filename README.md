@@ -40,9 +40,3 @@ TODO :
   <img src="/screenShots/google-play-badge.png" width="200" height"300"/>
     </a>
   </div>
-  
-More :
-  - Clock Arduino : https://github.com/Mehranalam/Clock
-  - Guard : https://github.com/Mehranalam/Guard
-  - Emoji : https://github.com/Mehranalam/Emoji
-  - News Application : https://github.com/Mehranalam/NewsApp

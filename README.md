@@ -25,6 +25,8 @@ TODO :
 - [ ] Use [Cloud Storage](https://firebase.google.com/docs/storage/) for Store Global data and personal users data (image profile, categories selected and more)
 - [ ] Re-design UI
 
+[![status](https://img.shields.io/badge/status-in%20Process-orange)](https://github.com/Mehranalam/)
+
 
 <div>
   <a href="https://raw.githubusercontent.com/Mehranalam/Bardeal/main/screenShots/beta.txt">

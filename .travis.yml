@@ -2,3 +2,7 @@ language: ruby
 rvm:
  - 2.2
  - jruby
+ 
+install:
+  - bundle install --path vendor/bundle
+  - npm install

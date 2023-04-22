@@ -7,6 +7,8 @@ the **firebase** service and the UI design idea of
 this program is inspired by 
 the following link. The minimum usable SDK is 21.
 
+[![Android CI](https://github.com/Mehranalam/Bardeal/actions/workflows/android.yml/badge.svg)](https://github.com/Mehranalam/Bardeal/actions/workflows/android.yml)
+
 Tools:
 
 - Firebase : https://firebase.google.com/
